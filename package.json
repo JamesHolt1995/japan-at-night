@@ -1,0 +1,23 @@
+{
+  "name": "image-to-grid",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html --open",
+    "clean": "rm -rf dist/*",
+    "build:parcel": "parcel build src/index.html --no-content-hash --no-source-maps --public-url ./",
+    "build": "npm run clean && npm run build:parcel"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.5.0",
+    "sharp": "^0.29.3"
+  },
+  "dependencies": {
+    "gsap": "^3.10.4",
+    "imagesloaded": "^5.0.0"
+  }
+}

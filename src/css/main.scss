@@ -1,0 +1,180 @@
+body {
+    font-size: 16px;
+    color: #ff0062;
+    margin: 0;
+    padding: 0;
+    --background-color: #04050b;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--background-color);
+}
+
+
+
+.grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(100, 1fr);
+    //opacity: 0;
+    pointer-events: none;
+
+    &__item {
+        grid-column: var(--c) / span var(--cs);
+        grid-row: var(--r) / span var(--rs);
+        position: relative;
+        transform: translateY(-100px);
+        opacity: 0;
+        pointer-events: all;
+
+        /* will-change: opacity, transform; */
+        &-img {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+        }
+
+        &-text {
+            font-family: sans-serif;
+            text-transform: uppercase;
+            top: 100%;
+            margin: 10px 0 0 0;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 100;
+            line-height: 1;
+            position: absolute;
+            opacity: 0;
+            transform: translateX(-20%);
+
+            &--reverse {
+                bottom: 100%;
+                top: auto;
+                margin: 0 0 10px 0;
+            }
+
+            // &::after {
+            //     content: "";
+            //     background-color: var(--background-color);
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     width: 100%;
+            //     height: 100%;
+            // }
+        }
+
+        &--title {
+            pointer-events: all;
+            grid-column: 6 / span 40;
+            grid-row: 8/ span 34;
+            font-family: questa-grande, serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 6em;
+            font-weight: 100;
+            //text-transform: uppercase;
+            z-index: 1;
+            line-height: 0.8;
+            letter-spacing: 2px;
+            position: relative;
+
+            span {
+                display: inline-block;
+                transform: translateX(-100%);
+                opacity: 0;
+
+                &:nth-of-type(2) {
+                    margin-left: 50px;
+                }
+            }
+
+
+        }
+
+        &--japan-title {
+            pointer-events: all;
+            grid-column: 4 / span 18;
+            grid-row: 86/ span 34;
+            font-size: 1.5em;
+            letter-spacing: 0;
+            line-height: 1;
+            opacity: 0;
+            transform: translateX(-100px);
+
+            span {
+                margin: 0;
+                line-height: 0.5;
+                font-size: 14px;
+                font-family: sans-serif;
+            }
+        }
+
+        &--burger {
+            grid-column: 96/ span 2;
+            grid-row: 6/ span 10;
+            opacity: 0;
+            transform: translateX(100%);
+
+            div {
+                height: 1px;
+                width: 100%;
+                background-color: rgb(255, 6, 93);
+                margin-bottom: 8px;
+            }
+        }
+
+        &--letter {
+            opacity: 0.04;
+            grid-area: 32 / 62 / span 30 / span 30;
+            font-size: 32em;
+        }
+
+    }
+}
+
+.overlay {
+    z-index: 1;
+    background-color: var(--background-color);
+    font-family: questa-grande, serif;
+    font-size: 250px;
+    cursor: pointer;
+    pointer-events: all;
+    transform: translateY(-150%);
+
+    &__title {
+        line-height: 0.8;
+        margin-top: -70px;
+        grid-column: var(--c) / span var(--cs);
+        grid-row: var(--r) / span var(--rs);
+        opacity: 0;
+        transform: translateY(-100px);
+
+
+        span {
+            margin-left: 15%;
+        }
+
+        &-text {
+            display: inline-block;
+        }
+
+        &-line {
+            height: 3px;
+            background-color: #ff0062;
+            width: 0%;
+        }
+    }
+
+}
